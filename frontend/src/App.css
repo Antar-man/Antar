@@ -1,0 +1,122 @@
+:root {
+  --primary-color: #f2994a;      /* Bright orange */
+  --secondary-color: #27ae60;    /* Deep green */
+  --accent-color: #f2c94c;       /* Gold/yellow */
+  --danger-color: #eb5757;       /* Red */
+  --bg-light: #f9f5f2;           /* Light beige */
+  --bg-dark: #2d2d2d;            /* Dark gray */
+  --text-dark: #1e1e1e;          /* Dark text */
+  --text-light: #ffffff;         /* Light text */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  background-color: var(--bg-light);
+  text-align: center;
+}
+
+h1, h2 {
+  color: var(--primary-color);
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+.message {
+  color: var(--danger-color);
+  margin-top: 10px;
+}
+
+.links {
+  margin-top: 20px;
+}
+
+.links a {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+/* Growth page styles */
+.levels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.level {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--text-light);
+}
+
+.completed {
+  background-color: var(--secondary-color);
+}
+
+.current {
+  background-color: var(--primary-color);
+}
+
+.future {
+  background-color: var(--bg-dark);
+}
+
+.progress-bar-bg {
+  height: 20px;
+  width: 100%;
+  background-color: var(--bg-dark);
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--accent-color);
+  border-radius: 10px;
+}
