@@ -1,41 +1,91 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import LandingPage from './pages/LandingPage';
-import LoginPage from './pages/LoginPage';
-import SignupPage from './pages/SignupPage';
-import HomePage from './pages/HomePage';
-import GrowthPage from './pages/GrowthPage';
+import { Routes, Route } from "react-router-dom";
+import Layout from "./Components/Layout.jsx";   // adjust import path
+import Navbar from "./Components/Navbar/nav.jsx";
+import Login from "./pages/auth/login.jsx";
+import Signup from "./pages/auth/Signup.jsx";
 
-function App() {
-  const [token, setToken] = useState(localStorage.getItem('token') || null);
+import Home from "./pages/Home.jsx";
+import Journal from "./pages/Journal.jsx";
+import Mood from "./pages/Mood.jsx";
+import Growth from "./pages/Growth.jsx";
+import Letters from "./pages/Letters.jsx";
+import Resources from "./pages/Resources.jsx";
+import OnboardingPage from "./pages/Onboarding.jsx";
+import HelpPage from "./pages/HelpPage.jsx";
+import ProfilePage from "./pages/ProfilePage.jsx";
 
-  const handleLogin = (tok) => {
-    localStorage.setItem('token', tok);
-    setToken(tok);
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    setToken(null);
-  };
-
+export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route
-          path="/home"
-          element={token ? <HomePage token={token} onLogout={handleLogout} /> : <Navigate to="/login" />}
-        />
-        <Route
-          path="/growth"
-          element={token ? <GrowthPage token={token} /> : <Navigate to="/login" />}
-        />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <Layout>
+            <Home />
+          </Layout>
+        }
+      />
+      <Route
+        path="/journal"
+        element={
+          <Layout>
+            <Journal />
+          </Layout>
+        }
+      />
+      <Route
+        path="/mood"
+        element={
+          <Layout>
+            <Mood />
+          </Layout>
+        }
+      />
+      <Route
+        path="/growth"
+        element={
+          <Layout>
+            <Growth />
+          </Layout>
+        }
+      />
+      <Route
+        path="/letters"
+        element={
+          <Layout>
+            <Letters />
+          </Layout>
+        }
+      />
+      <Route
+        path="/resources"
+        element={
+          <Layout>
+            <Resources />
+          </Layout>
+        }
+      />
+      <Route
+        path="/help"
+        element={
+          <Layout>
+            <HelpPage />
+          </Layout>
+        }
+      />
+      <Route
+        path="/profile"
+        element={
+          <Layout>
+            <ProfilePage />
+          </Layout>
+        }
+      />
+
+      
+      <Route path="/onboard" element={<OnboardingPage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+    </Routes>
   );
 }
-
-export default App;

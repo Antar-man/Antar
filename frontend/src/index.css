@@ -1,17 +1,3 @@
-:root {
-  --primary-color: #f2994a;      /* Bright orange - action buttons, highlights */
-  --secondary-color: #27ae60;    /* Deep green - completed progress */
-  --accent-color: #f2c94c;       /* Gold/yellow - highlights */
-  --danger-color: #eb5757;       /* Red - errors, warnings */
-  --bg-light: #f9f5f2;           /* Light beige - background */
-  --bg-dark: #2d2d2d;            /* Dark gray - navbars, footers */
-  --text-dark: #1e1e1e;          /* Dark text */
-  --text-light: #ffffff;          /* Light text */
-}
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg-light);
-  color: var(--text-dark);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
