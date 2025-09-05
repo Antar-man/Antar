@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antar - Anonymous Letters</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌟 Antar</h1>
+            <p class="subtitle">Share your thoughts anonymously through letters</p>
+        </header>
+
+        <main>
+            <!-- Write Letter Section -->
+            <section class="write-section">
+                <h2>✍️ Write an Anonymous Letter</h2>
+                <div class="letter-form">
+                    <textarea 
+                        id="letterContent" 
+                        placeholder="Dear someone,&#10;&#10;Share your thoughts, feelings, or experiences here. Your letter will be posted anonymously to support others who might be going through similar experiences.&#10;&#10;With care,&#10;Anonymous"
+                        rows="8"
+                        maxlength="1000"
+                    ></textarea>
+                    <div class="form-actions">
+                        <span id="charCount">0/1000</span>
+                        <button id="sendButton" onclick="sendLetter()">Send Letter 📮</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Read Letters Section -->
+            <section class="read-section">
+                <h2>📬 Anonymous Letters from Others</h2>
+                <div id="lettersContainer" class="letters-container">
+                    <div class="loading">Loading letters...</div>
+                </div>
+                <button id="refreshButton" onclick="loadLetters()">Refresh Letters 🔄</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>💝 Your letters are completely anonymous. No personal information is stored or shared.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
