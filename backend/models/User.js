@@ -9,7 +9,13 @@ const userSchema = new mongoose.Schema({
     mood: String,
     stress: String,
     sleepHours: Number,
+  },
+  growth:{
+    exp: { type: Number, default: 0 },
+    level: { type: Number, default: 1 },  
+    health: { type: Number, default: 100 },
   }
+  
 }, { timestamps: true });//added timestamps
 
 const User = mongoose.model('User', userSchema);//creates collection in the database users using userSchema.

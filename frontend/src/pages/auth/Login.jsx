@@ -16,10 +16,11 @@ export default function LoginPage() {
     e.preventDefault();
     try {
       // Call backend
+      const token= localStorage.getItem("token");
       const res = await axios.post("http://localhost:5000/auth/login", {
         username: username, // backend expects username
         password,
-      });
+      },{ headers: { Authorization: `Bearer ${token}` } });
 
       if (res.data.token) {
   localStorage.setItem("token", res.data.token);
@@ -34,29 +35,25 @@ else {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-blue-100 via-white to-purple-100">
+    <div className="flex min-h-screen" style={{ backgroundImage: 'url(src/monuments/bg.png)' }}>
       {/* Left Section */}
       <div className="hidden lg:flex w-1/2 items-center justify-center p-12">
         <div className="text-center">
-          <h1 className="text-5xl font-extrabold text-blue-700 mb-6 drop-shadow-md">
+          <h1 className="text-7xl font-extrabold text-green-700 mb-6 mt-[-300px] drop-shadow-md">
             Antar
           </h1>
-          <p className="text-lg text-gray-700 max-w-md mx-auto leading-relaxed">
+          <p className="text-lg text-white-100 max-w-md mx-auto leading-relaxed">
             A gentle space for your mind.  
-            Log in and start your journey toward balance and well-being 🌿
+          
           </p>
-          <img
-            src="https://illustrations.popsy.co/white/mindfulness.svg"
-            alt="Wellness Illustration"
-            className="mt-8 w-80 mx-auto"
-          />
+          
         </div>
       </div>
 
       {/* Right Section */}
       <div className="flex flex-1 items-center justify-center p-6">
         <div className="w-full max-w-md bg-white/70 backdrop-blur-lg shadow-2xl rounded-3xl p-10 animate-fadeIn">
-          <h2 className="text-3xl font-bold text-center text-blue-700 mb-6">
+          <h2 className="text-3xl font-bold text-center text-green-700 mb-6">
             Welcome Back
           </h2>
 
@@ -66,7 +63,7 @@ else {
               <label className="block text-sm font-medium mb-2">Username</label>
               <input
                 type="text"
-                className={`w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-400 focus:outline-none transition ${
+                className={`w-full border rounded-lg p-3 focus:ring-2 focus:ring-purple-400 focus:outline-none transition ${
                   error.includes("username") ? "border-red-500" : "border-gray-300"
                 }`}
                 placeholder="Enter your username"
@@ -81,7 +78,7 @@ else {
               <label className="block text-sm font-medium mb-2">Password</label>
               <input
                 type={showPassword ? "text" : "password"}
-                className={`w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-400 focus:outline-none transition ${
+                className={`w-full border rounded-lg p-3 focus:ring-2 focus:ring-purple-400 focus:outline-none transition ${
                   error.includes("Password") ? "border-red-500" : "border-gray-300"
                 }`}
                 placeholder="Enter your password"
@@ -107,7 +104,7 @@ else {
             {/* Submit */}
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-3 rounded-lg hover:opacity-90 transition shadow-md hover:shadow-lg"
+              className="w-full bg-gradient-to-r from-green-400 to-green-600 text-white font-semibold py-3 rounded-lg hover:opacity-90 transition shadow-md hover:shadow-lg"
             >
               Login
             </button>
@@ -116,7 +113,7 @@ else {
           {/* Signup link */}
           <p className="text-sm text-gray-600 mt-6 text-center">
             Don’t have an account?{" "}
-            <Link to="/signup" className="text-blue-600 font-medium hover:underline">
+            <Link to="/signup" className="text-purple-600 font-medium hover:underline">
               Sign up
             </Link>
           </p>
