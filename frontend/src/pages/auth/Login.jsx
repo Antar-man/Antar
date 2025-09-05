@@ -2,38 +2,40 @@
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email.includes("@")) {
-      setError("Please enter a valid email");
-      return;
-    }
-    if (password.length < 6) {
-      setError("Password must be at least 6 characters");
-      return;
-    }
+    try {
+      // Call backend
+      const res = await axios.post("http://localhost:5000/auth/login", {
+        username: username, // backend expects username
+        password,
+      });
 
-    setError("");
-    console.log("Email:", email);
-    console.log("Password:", password);
-
-    // Redirect after login
-    navigate("/");
+      if (res.data.token) {
+  localStorage.setItem("token", res.data.token);
+  navigate("/profile");  // redirect user
+}
+else {
+        setError(res.data.message || "Login failed");
+      }
+    } catch (err) {
+      setError(err.response?.data?.message || err.message);
+    }
   };
 
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-blue-100 via-white to-purple-100">
-      
-      {/* Left Section - Branding */}
+      {/* Left Section */}
       <div className="hidden lg:flex w-1/2 items-center justify-center p-12">
         <div className="text-center">
           <h1 className="text-5xl font-extrabold text-blue-700 mb-6 drop-shadow-md">
@@ -51,7 +53,7 @@ export default function LoginPage() {
         </div>
       </div>
 
-      {/* Right Section - Login Form */}
+      {/* Right Section */}
       <div className="flex flex-1 items-center justify-center p-6">
         <div className="w-full max-w-md bg-white/70 backdrop-blur-lg shadow-2xl rounded-3xl p-10 animate-fadeIn">
           <h2 className="text-3xl font-bold text-center text-blue-700 mb-6">
@@ -61,15 +63,15 @@ export default function LoginPage() {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Email */}
             <div>
-              <label className="block text-sm font-medium mb-2">Email</label>
+              <label className="block text-sm font-medium mb-2">Username</label>
               <input
-                type="email"
+                type="text"
                 className={`w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-400 focus:outline-none transition ${
-                  error.includes("email") ? "border-red-500" : "border-gray-300"
+                  error.includes("username") ? "border-red-500" : "border-gray-300"
                 }`}
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 required
               />
             </div>

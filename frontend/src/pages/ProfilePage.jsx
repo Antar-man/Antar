@@ -1,17 +1,43 @@
 // src/pages/ProfilePage.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
+
 
 export default function ProfilePage() {
   const navigate = useNavigate();
 
-  // initial user data (later connect with backend / DB)
   const [profile, setProfile] = useState({
-    username: "Hariom",
-    email: "hariom@example.com",
-    password: "********",
+    username: "",
+    email: "",
+    password: "********", // you usually don’t get password in JWT
     profilePic: "",
   });
+
+  useEffect(() => {
+    // get token (saved in localStorage after login)
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      try {
+        const decoded = jwtDecode(token);
+
+        // set profile values from token payload
+        setProfile((prev) => ({
+          ...prev,
+          username: decoded.username || "Guest User",
+          email: decoded.email || "no-email@example.com",
+          profilePic: decoded.profilePic || "",
+        }));
+      } catch (err) {
+        console.error("Invalid token", err);
+        navigate("/login");
+      }
+    } else {
+      // no token → force login
+      navigate("/login");
+    }
+  }, [navigate]);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -23,14 +49,13 @@ export default function ProfilePage() {
   };
 
   const handleSave = () => {
-    console.log("Updated Profile:", profile);
     alert("Profile updated successfully!");
-    // Send data to backend API here
+    // send updated profile to backend
   };
 
   const handleLogout = () => {
+    localStorage.removeItem("token"); // clear JWT
     console.log("User logged out");
-    // clear auth tokens / session here
     navigate("/login");
   };
 
@@ -90,6 +115,7 @@ export default function ProfilePage() {
           value={profile.password}
           onChange={handleChange}
           className="w-full border rounded-lg p-2"
+          disabled // usually not editable from token
         />
       </div>
 
