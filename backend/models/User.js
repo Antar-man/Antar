@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
     mood: String,
     stress: String,
     sleepHours: Number,
+    gad7Score: Number,
   },
   growth:{
     exp: { type: Number, default: 0 },

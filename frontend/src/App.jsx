@@ -5,6 +5,7 @@ import Login from "./pages/auth/login.jsx";
 import Signup from "./pages/auth/Signup.jsx";
 
 import Home from "./pages/Home.jsx";
+import Onboarding from "./pages/Onboarding.jsx";
 import Journal from "./pages/Journal.jsx";
 import Mood from "./pages/Mood.jsx";
 import Growth from "./pages/Growth.jsx";
@@ -14,13 +15,21 @@ import HelpPage from "./pages/HelpPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import QuestionnairePage from "./pages/QuestionnairePage.jsx";
 import Chatbot from "./pages/Chatbot.jsx";
+import BreathExercise from "./pages/BreathExercise.jsx";
+import ChatbotPopup from "./components/ChatbotPopup.jsx";
 
 
 export default function App() {
   return (
+    <>
+      <BreathExercise />
     <Routes>
       <Route
         path="/"
+        element={<Onboarding />}
+      />
+      <Route
+        path="/home"
         element={
           <Layout>
             <Home />
@@ -90,5 +99,8 @@ export default function App() {
       <Route path="/questions" element={<QuestionnairePage />} />
       <Route path="/chatbot" element={<Chatbot />} />
     </Routes>
+    <ChatbotPopup />
+    <BreathExercise />
+    </>
   );
 }

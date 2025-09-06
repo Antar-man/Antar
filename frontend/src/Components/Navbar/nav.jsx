@@ -8,7 +8,7 @@ import { FaUser } from "react-icons/fa";
 
 export default function Navbar() {
   const navItems = [
-    { label: "Home", path: "/", icon: <IoHome /> },
+    { label: "Home", path: "/home", icon: <IoHome /> },
     { label: "Journal", path: "/journal", icon: <BsJournalRichtext /> },
     { label: "Mood", path: "/mood", icon: <TbMoodSmileBeam /> },
     { label: "Growth", path: "/growth", icon: <BsBank2 /> },
