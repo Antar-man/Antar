@@ -14,12 +14,86 @@ import HelpPage from "./pages/HelpPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import QuestionnairePage from "./pages/QuestionnairePage.jsx";
 import Chatbot from "./pages/Chatbot.jsx";
+import BreathExercise from "./pages/BreathExercise.jsx";
 import ChatbotPopup from "./components/ChatbotPopup.jsx";
 
 
 export default function App() {
   return (
     <>
+      <BreathExercise />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <Home />
+            </Layout>
+          }
+        />
+        <Route
+          path="/journal"
+          element={
+            <Layout>
+              <Journal />
+            </Layout>
+          }
+        />
+        <Route
+          path="/mood"
+          element={
+            <Layout>
+              <Mood />
+            </Layout>
+          }
+        />
+        <Route
+          path="/growth"
+          element={
+            <Layout>
+              <Growth />
+            </Layout>
+          }
+        />
+        <Route
+          path="/letters"
+          element={
+            <Layout>
+              <Letters />
+            </Layout>
+          }
+        />
+        <Route
+          path="/resources"
+          element={
+            <Layout>
+              <Resources />
+            </Layout>
+          }
+        />
+        <Route
+          path="/help"
+          element={
+            <Layout>
+              <HelpPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <Layout>
+              <ProfilePage />
+            </Layout>
+          }
+        />
+
+        
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/questions" element={<QuestionnairePage />} />
+        <Route path="/chatbot" element={<Chatbot />} />
+      </Routes>
     <Routes>
       <Route
         path="/"
