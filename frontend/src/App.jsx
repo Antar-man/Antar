@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./Components/Layout.jsx";   // adjust import path
 import Navbar from "./Components/Navbar/nav.jsx";
-import Login from "./pages/auth/login.jsx";
+import Login from "./pages/auth/Login.jsx";
 import Signup from "./pages/auth/Signup.jsx";
 
 import Home from "./pages/Home.jsx";
