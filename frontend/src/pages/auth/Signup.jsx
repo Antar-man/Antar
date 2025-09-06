@@ -25,7 +25,7 @@ export default function SignupPage() {
         if (res.data.token) {
           localStorage.setItem("token", res.data.token);
         }
-        navigate("/questions"); // 🚀 go to questionnaire
+  navigate("/questions"); // 🚀 go to questionnaire
       } else {
         setMessage(res.data.message || "Signup failed. Try again.");
       }

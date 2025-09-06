@@ -24,7 +24,7 @@ export default function LoginPage() {
 
       if (res.data.token) {
   localStorage.setItem("token", res.data.token);
-  navigate("/profile");  // redirect user
+  navigate("/home");  // redirect user
 }
 else {
         setError(res.data.message || "Login failed");
