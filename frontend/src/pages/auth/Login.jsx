@@ -35,7 +35,7 @@ else {
   };
 
   return (
-    <div className="flex min-h-screen" style={{ backgroundImage: 'url(src/monuments/bg.png)' }}>
+    <div className="flex min-h-screen" style={{ backgroundImage: 'url(/monuments/bg.png)' }}>
       {/* Left Section */}
       <div className="hidden lg:flex w-1/2 items-center justify-center p-12">
         <div className="text-center">
