@@ -11,7 +11,7 @@ export default function ProfilePage() {
     username: "",
     email: "",
     password: "********", // you usually don’t get password in JWT
-    profilePic: "",
+    profilePic: "src/monuments/example.png",
   });
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export default function ProfilePage() {
         <img
           src={
             profile.profilePic ||
-            "https://via.placeholder.com/100?text=Profile"
+            "src/monuments/example.png"
           }
           alt="Profile"
           className="w-24 h-24 rounded-full object-cover border"

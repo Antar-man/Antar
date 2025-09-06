@@ -118,13 +118,12 @@ export default function GrowthAdventure() {
 
   return (
     <div
-      className="min-h-screen relative overflow-hidden"
-      style={{ backgroundColor: "#cfeeb6ff" }}
+      className="min-h-screen relative overflow-hidden bg-gradient-to-b from-green-50 via-white to-green-100"
     >
       <div className="relative z-10 p-6 max-w-7xl mx-auto">
         {/* Header */}
-        <h1 className="text-5xl font-extrabold text-center mb-12 text-gray-900 tracking-wide drop-shadow-sm bungee-spice-regular" >
-          Growth Adventure
+        <h1 className="text-3xl font-bold text-center mb-12 text-gray-900 tracking-wide drop-shadow-sm bungee-spice-regular" >
+          Grow Monuments
         </h1>
 
         {/* Stats Cards */}

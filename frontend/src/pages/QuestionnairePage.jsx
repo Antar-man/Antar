@@ -39,7 +39,7 @@ export default function QuestionnairePage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-green-100 via-white to-blue-100 p-4">
+    <div className="flex items-center justify-center min-h-screen" style={{ backgroundImage: `url(src/monuments/bg2.png)`, backgroundSize: "cover" }}>
       <div className="bg-white/70 backdrop-blur-lg shadow-xl rounded-3xl p-8 w-full max-w-lg">
         <h2 className="text-3xl font-bold text-center mb-6 text-green-700">
           Quick Questionnaire
@@ -99,7 +99,7 @@ export default function QuestionnairePage() {
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-green-500 to-blue-500 text-white font-semibold py-3 rounded-lg hover:opacity-90 transition shadow-md hover:shadow-lg"
+            className="w-full bg-gradient-to-r from-green-500 to-purple-500 text-white font-semibold py-3 rounded-lg hover:opacity-90 transition shadow-md hover:shadow-lg"
           >
             Save & Continue
           </button>

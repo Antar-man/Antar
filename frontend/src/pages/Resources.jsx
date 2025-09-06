@@ -35,7 +35,7 @@ export default function Resources() {
   const [resources] = useState(mockResources);
 
   return (
-    <div className="p-6 min-h-screen bg-gradient-to-b from-yellow-50 to-yellow-100">
+    <div className="p-6 min-h-screen bg-gradient-to-b from-green-50 via-white to-green-100">
       <h1 className="text-3xl font-bold text-center mb-6">Resources</h1>
 
       {/* Grid */}

@@ -40,7 +40,7 @@ export default function Mood() {
   }));
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="p-6 space-y-6 bg-gradient-to-b from-green-50 via-white to-green-100">
       {/* Title */}
       <h1 className="text-2xl font-bold text-gray-800">Mood Tracker</h1>
       <p className="text-gray-600">How are you feeling today?</p>
