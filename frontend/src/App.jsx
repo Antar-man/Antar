@@ -10,9 +10,11 @@ import Mood from "./pages/Mood.jsx";
 import Growth from "./pages/Growth.jsx";
 import Letters from "./pages/Letters.jsx";
 import Resources from "./pages/Resources.jsx";
-import OnboardingPage from "./pages/Onboarding.jsx";
 import HelpPage from "./pages/HelpPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
+import QuestionnairePage from "./pages/QuestionnairePage.jsx";
+import Chatbot from "./pages/Chatbot.jsx";
+
 
 export default function App() {
   return (
@@ -83,9 +85,10 @@ export default function App() {
       />
 
       
-      <Route path="/onboard" element={<OnboardingPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/questions" element={<QuestionnairePage />} />
+      <Route path="/chatbot" element={<Chatbot />} />
     </Routes>
   );
 }

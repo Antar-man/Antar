@@ -17,7 +17,7 @@ export default function Journal() {
   };
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="p-6 space-y-6 bg-gradient-to-b from-green-50 via-white to-green-100">
       {/* Page title */}
       <h1 className="text-2xl font-bold text-gray-800">Daily Journal</h1>
       <p className="text-gray-600">Write freely or use a prompt below 👇</p>
