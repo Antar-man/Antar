@@ -10,7 +10,7 @@ export default function Homecard() {
     {
       title: "Monument Mitra",
       description: "A gentle chatbot with an Indian monuments vibe",
-      highlight: true,
+      highlight: true,path: "/chatbot"
     },
   ];
 
