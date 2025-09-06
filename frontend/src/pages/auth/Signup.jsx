@@ -35,7 +35,7 @@ export default function SignupPage() {
   };
 
   return (
-<div className="flex items-center justify-center min-h-screen" style={{ backgroundImage: `url(src/monuments/cloud.png)`, backgroundSize: "cover" }}>
+<div className="flex items-center justify-center min-h-screen" style={{ backgroundImage: `url(/monuments/cloud.png)`, backgroundSize: "cover" }}>
       <div className="bg-white/70 backdrop-blur-lg shadow-2xl rounded-3xl p-8 w-full max-w-lg">
         <h2 className="text-3xl font-bold text-center mb-6 text-green-700">
           Create Account
