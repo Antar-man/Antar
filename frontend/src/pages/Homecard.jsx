@@ -9,7 +9,7 @@ export default function Homecard() {
     { title: "Resources", description: "PDFs, audio, videos", path: "/resources" },
     {
       title: "Monument Mitra",
-      description: "A gentle chatbot with an Indian monuments vibe",
+      description: "A gentle chatbot",
       highlight: true,path: "/chatbot"
     },
   ];

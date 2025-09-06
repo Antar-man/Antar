@@ -14,10 +14,12 @@ import HelpPage from "./pages/HelpPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import QuestionnairePage from "./pages/QuestionnairePage.jsx";
 import Chatbot from "./pages/Chatbot.jsx";
+import ChatbotPopup from "./components/ChatbotPopup.jsx";
 
 
 export default function App() {
   return (
+    <>
     <Routes>
       <Route
         path="/"
@@ -90,5 +92,7 @@ export default function App() {
       <Route path="/questions" element={<QuestionnairePage />} />
       <Route path="/chatbot" element={<Chatbot />} />
     </Routes>
+    <ChatbotPopup />
+    </>
   );
 }
