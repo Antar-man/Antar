@@ -3,31 +3,45 @@ import { useState } from "react";
 const mockResources = [
   {
     id: 1,
-    title: "Stress Relief Guide",
+    title: "100 Ways to Motivate Yourself : Change Your Life Forever",
     type: "pdf",
-    thumbnail: "/assets/pdf.png", // placeholder thumbnail
-    url: "/docs/stress.pdf",
+    thumbnail: "/docs/docsImages/pdf.png",
+    url: "/docs/doc.pdf",
   },
   {
     id: 2,
-    title: "Sleep Meditation",
+    title: "10 Minute Anxiety Relief",
     type: "audio",
-    thumbnail: "/assets/audio.png",
-    url: "/audio/sleep.mp3",
+    thumbnail: "/audio/audioImages/audio.png",
+    url: "/audio/audio.mp3",
   },
   {
     id: 3,
-    title: "Exam Motivation",
+    title: "How To Eliminate Self Doubt Forever & The Power of Your Unconscious Mind",
     type: "video",
-    thumbnail: "/assets/video.png",
-    url: "/videos/motivation.mp4",
+    thumbnail: "/videos/videoImages/video.png",
+    url: "/videos/vid1.mp4",
   },
   {
     id: 4,
-    title: "Exam Motivation",
+    title: "The psychology of self-motivation",
     type: "video",
-    thumbnail: "/assets/video.png",
-    url: "/videos/motivation.mp4",
+    thumbnail: "/videos/videoImages/video1.png",
+    url: "/videos/vid2.mp4",
+  },
+  {
+    id: 5,
+    title: "Anxiety Moodjuice Self Help Guide",
+    type: "pdf",
+    thumbnail: "/docs/docsImages/pdf1.png", // placeholder thumbnail
+    url: "/docs/doc1.pdf",
+  },
+  {
+    id: 6,
+    title: "Marconi Union",
+    type: "audio",
+    thumbnail: "/audio/audioImages/audio1.png",
+    url: "/audio/audio1.mp3",
   },
 ];
 
