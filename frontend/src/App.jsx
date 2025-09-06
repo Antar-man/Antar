@@ -95,6 +95,7 @@ export default function App() {
       <Route path="/chatbot" element={<Chatbot />} />
     </Routes>
     <ChatbotPopup />
+    <BreathExercise />
     </>
   );
 }
