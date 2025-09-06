@@ -19,17 +19,21 @@ router.get("/", authMiddleware, async (req, res) => {
 // Save questionnaire answers
 router.post("/questions", authMiddleware, async (req, res) => {
   try {
-    const { mood, stress, sleepHours } = req.body;
+    const { mood, stress, sleepHours, gad7Score } = req.body;
     console.log("Received body:", req.body);
     console.log("User ID from token:", req.userId);
 
     const user = await User.findById(req.userId);
     if (!user) return res.status(404).json({ success: false, message: "User not found" });
 
-    user.questionnaire = { mood, stress, sleepHours };
+    user.questionnaire = { mood, stress, sleepHours, gad7Score };
     await user.save();
 
-    res.json({ success: true, message: "Questionnaire saved successfully" });
+    // Also create a Questionnaire document for history
+    const Questionnaire = require("../models/Questionnaire");
+    await Questionnaire.create({ user: user._id, mood, stress, sleepHours, gad7Score });
+
+    res.json({ success: true, message: "Questionnaire saved successfully", gad7Score });
   } catch (err) {
     console.error("Error in /questions:", err);
     res.status(500).json({ success: false, message: "Server error saving questionnaire" });
