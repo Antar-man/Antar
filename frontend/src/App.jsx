@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./Components/Layout.jsx";   // adjust import path
 import Navbar from "./Components/Navbar/nav.jsx";
-import Login from "./pages/auth/login.jsx";
+import Login from "./pages/auth/Login.jsx";
 import Signup from "./pages/auth/Signup.jsx";
 
 import Home from "./pages/Home.jsx";
@@ -16,7 +16,7 @@ import ProfilePage from "./pages/ProfilePage.jsx";
 import QuestionnairePage from "./pages/QuestionnairePage.jsx";
 import Chatbot from "./pages/Chatbot.jsx";
 import BreathExercise from "./pages/BreathExercise.jsx";
-import ChatbotPopup from "./components/ChatbotPopup.jsx";
+import ChatbotPopup from "./Components/ChatbotPopup.jsx";
 
 
 export default function App() {
