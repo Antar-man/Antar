@@ -16,7 +16,7 @@ import ProfilePage from "./pages/ProfilePage.jsx";
 import QuestionnairePage from "./pages/QuestionnairePage.jsx";
 import Chatbot from "./pages/Chatbot.jsx";
 import BreathExercise from "./pages/BreathExercise.jsx";
-import ChatbotPopup from "./components/ChatbotPopup.jsx";
+import ChatbotPopup from "./Components/ChatbotPopup.jsx";
 
 
 export default function App() {
