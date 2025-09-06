@@ -28,36 +28,36 @@ export default function GrowthAdventure() {
   const levels = [
     {
       id: 1,
-      ruin: "src/monuments/ruins.png",
-      monument: "src/monuments/sanchi-stupa.png",
+      ruin: "/monuments/ruins.png",
+      monument: "/monuments/sanchi-stupa.png",
       ruinLabel: "Scattered stones → confusion",
       monumentLabel: "Sanchi Stupa → self-awareness"
     },
     {
       id: 2,
-      ruin: "src/monuments/ruins.png",
-      monument: "src/monuments/taj-mahal.png",
+      ruin: "/monuments/ruins.png",
+      monument: "/monuments/taj-mahal.png",
       ruinLabel: "Broken diary → unorganized thoughts",
       monumentLabel: "Taj Mahal → clarity, expression"
     },
     {
       id: 3,
-      ruin: "src/monuments/ruins.png",
-      monument: "src/monuments/qutub-minar.png",
+      ruin: "/monuments/ruins.png",
+      monument: "/monuments/qutub-minar.png",
       ruinLabel: "Cracked pillar → unstable moods",
       monumentLabel: "Qutub Minar → rising awareness"
     },
     {
       id: 4,
-      ruin: "src/monuments/ruins.png",
-      monument: "src/monuments/konark.png",
+      ruin: "/monuments/ruins.png",
+      monument: "/monuments/konark.png",
       ruinLabel: "Collapsed temple → lack of progress",
       monumentLabel: "Konark Sun Temple → strength, progress illuminated"
     },
     {
       id: 5,
-      ruin: "src/monuments/ruins.png",
-      monument: "src/monuments/hampi.png",
+      ruin: "/monuments/ruins.png",
+      monument: "/monuments/hampi.png",
       ruinLabel: "Broken arches → isolation",
       monumentLabel: "Hampi/Charminar → community, support"
     }
