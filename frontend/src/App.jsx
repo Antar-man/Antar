@@ -5,6 +5,7 @@ import Login from "./pages/auth/login.jsx";
 import Signup from "./pages/auth/Signup.jsx";
 
 import Home from "./pages/Home.jsx";
+import Onboarding from "./pages/Onboarding.jsx";
 import Journal from "./pages/Journal.jsx";
 import Mood from "./pages/Mood.jsx";
 import Growth from "./pages/Growth.jsx";
@@ -25,6 +26,10 @@ export default function App() {
     <Routes>
       <Route
         path="/"
+        element={<Onboarding />}
+      />
+      <Route
+        path="/home"
         element={
           <Layout>
             <Home />

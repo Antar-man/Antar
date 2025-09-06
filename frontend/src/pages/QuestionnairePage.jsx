@@ -53,7 +53,7 @@ export default function QuestionnairePage() {
           { message: chatMessage },
           { headers: { Authorization: `Bearer ${token}` } }
         );
-        navigate("/"); // 🚀 go to landing/home
+  navigate("/home"); // 🚀 go to home
       } else {
         setMessage(res.data.message || "Could not save answers");
       }
