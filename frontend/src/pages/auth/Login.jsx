@@ -17,7 +17,7 @@ export default function LoginPage() {
     try {
       // Call backend
       const token= localStorage.getItem("token");
-      const res = await axios.post("https://antar-backend.onrender.com/auth/login", {
+      const res = await axios.post("http://localhost:5000/auth/login", {
         username: username, // backend expects username
         password,
       },{ headers: { Authorization: `Bearer ${token}` } });
