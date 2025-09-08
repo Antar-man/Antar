@@ -8,11 +8,7 @@ const chatbotRoutes = require("./routes/chatbot");
 
 const app = express();
 app.use(express.json());
-app.use(cors({
-  origin: "https://antar-bevl.onrender.com",
-  methods: ["GET", "POST", "PUT", "DELETE"], // allowed methods
-  credentials: true
-}));
+app.use(cors());
 
 // Routes
 app.get("/", (req, res) => res.send("Hello, World!"));
