@@ -9,10 +9,10 @@ export default function Home() {
       <div className="mb-10">
   <h1 className="hind-regular text-green-600 text-6xl font-extrabold tracking-tight text-gray-900 drop-shadow-md 
            md:text-5xl sm:text-4xl xs:text-3xl">
-          Antar
+          AyurSutra
         </h1>
         <p className="text-[1.4rem] text-gray-700 mt-3 md:text-xl sm:text-base xs:text-sm max-w-lg ">
-          A gentle space for your mind
+          Panchakarma Patient Management and Therapy Scheduling.
         </p>
       </div>
 
