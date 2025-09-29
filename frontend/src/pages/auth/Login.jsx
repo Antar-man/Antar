@@ -40,10 +40,10 @@ else {
       <div className="hidden lg:flex w-1/2 items-center justify-center p-12">
         <div className="text-center">
           <h1 className="text-7xl font-extrabold text-green-700 mb-6 mt-[-300px] drop-shadow-md">
-            Antar
+            AyurSutra
           </h1>
           <p className="text-lg text-white-100 max-w-md mx-auto leading-relaxed">
-            A gentle space for your mind.  
+            Panchakarma Patient Management and Therapy Scheduling.  
           
           </p>
           
